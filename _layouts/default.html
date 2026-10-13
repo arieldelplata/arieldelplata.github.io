@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ page.title | default: site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}" />
+  {% seo %}
+
+  <!-- Tailwind CSS via CDN (Play CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#eef6ff',
+              100: '#d9ebff',
+              500: '#0e63c9',
+              600: '#0b50a8',
+              700: '#0a428a',
+              900: '#0f2540'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Leaflet.js (sin API key) -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+  <!-- FontAwesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    /* i18n: por defecto se muestra español */
+    .lang-en { display: none; }
+    #map { height: 320px; z-index: 0; }
+    .leaflet-container { border-radius: 1rem; }
+    section { scroll-margin-top: 90px; }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+  {% include navbar.html %}
+
+  <main>
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+  <!-- Botón flotante idioma (mobile / acceso rápido) -->
+  <button id="lang-fab" aria-label="Cambiar idioma / Switch language"
+    class="fixed bottom-5 right-5 z-50 flex items-center gap-2 rounded-full bg-brand-600 px-4 py-3 text-sm font-bold text-white shadow-xl shadow-brand-600/30 transition hover:bg-brand-700 hover:scale-105 active:scale-95">
+    <i class="fa-solid fa-language text-lg"></i>
+    <span id="lang-fab-label">EN</span>
+  </button>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
+  <!-- i18n vanilla JS sin recarga -->
+  <script>
+    (function () {
+      var current = localStorage.getItem('portfolio-lang') || 'es';
+
+      function applyLang(lang) {
+        current = lang;
+        document.documentElement.setAttribute('lang', lang);
+        localStorage.setItem('portfolio-lang', lang);
+        var showEs = (lang === 'es');
+        document.querySelectorAll('.lang-es').forEach(function (el) {
+          el.style.display = showEs ? '' : 'none';
+        });
+        document.querySelectorAll('.lang-en').forEach(function (el) {
+          // recupera display original guardado en data attribute
+          if (showEs) { el.style.display = 'none'; }
+          else {
+            if (el.dataset.display) { el.style.display = el.dataset.display; }
+            else { el.style.display = ''; }
+            // si la hoja CSS lo ocultaba con display:none, '' no alcanza -> forzar
+            if (getComputedStyle(el).display === 'none') {
+              el.style.display = el.tagName.match(/^(DIV|P|H\d|SECTION|UL|LI)$/) ? 'block' : 'inline';
+            }
+          }
+        });
+        // Etiquetas de los botones
+        document.querySelectorAll('[data-lang-label]').forEach(function (el) {
+          el.textContent = (lang === 'es') ? 'EN' : 'ES';
+        });
+        var navLabel = document.getElementById('lang-toggle-label');
+        if (navLabel) navLabel.textContent = (lang === 'es') ? 'EN' : 'ES';
+        var fabLabel = document.getElementById('lang-fab-label');
+        if (fabLabel) fabLabel.textContent = (lang === 'es') ? 'EN' : 'ES';
+      }
+
+      function toggle() {
+        applyLang(current === 'es' ? 'en' : 'es');
+      }
+
+      document.addEventListener('DOMContentLoaded', function () {
+        // Guarda display original de los .lang-en por si hace falta
+        document.querySelectorAll('.lang-en').forEach(function (el) {
+          var d = getComputedStyle(el).display;
+          if (d && d !== 'none') el.dataset.display = d;
+        });
+        applyLang(current);
+        var t1 = document.getElementById('lang-toggle');
+        var t2 = document.getElementById('lang-fab');
+        if (t1) t1.addEventListener('click', toggle);
+        if (t2) t2.addEventListener('click', toggle);
+      });
+    })();
+  </script>
+</body>
+</html>

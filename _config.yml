@@ -1,0 +1,23 @@
+title: "Cáceres Ary Fernán | Portfolio"
+description: "Portfolio personal de Cáceres Ary Fernán, Estudiante de Ingeniería en Sistemas de Información - UTN FRD, Campana."
+url: "https://arieldelplata.github.io"
+baseurl: ""
+lang: es
+author:
+  name: "Cáceres Ary Fernán"
+  email: "caceresaryf@gmail.com"
+
+# GitHub Pages (whitelist)
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Build
+markdown: kramdown
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - README.md

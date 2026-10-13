@@ -1,0 +1,43 @@
+<!-- Navbar responsive con toggle ES/EN -->
+<header class="sticky top-0 z-40 border-b border-slate-200/70 bg-white/85 backdrop-blur">
+  <nav class="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 sm:px-6">
+    <a href="#inicio" class="flex items-center gap-3">
+      <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-brand-600 font-extrabold text-white">AC</span>
+      <span class="leading-tight">
+        <span class="block text-sm font-extrabold text-slate-900">Cáceres Ary Fernán</span>
+        <span class="block text-xs text-slate-500">
+          <span class="lang-es">Ing. en Sistemas · UTN FRD</span>
+          <span class="lang-en">Systems Engineering · UTN FRD</span>
+        </span>
+      </span>
+    </a>
+    <div class="hidden items-center gap-5 text-sm font-semibold text-slate-600 md:flex">
+      <a href="#sobre-mi" class="hover:text-brand-600"><span class="lang-es">Sobre mí</span><span class="lang-en">About</span></a>
+      <a href="#idiomas" class="hover:text-brand-600"><span class="lang-es">Idiomas</span><span class="lang-en">Languages</span></a>
+      <a href="#educacion" class="hover:text-brand-600"><span class="lang-es">Educación</span><span class="lang-en">Education</span></a>
+      <a href="#proyectos" class="hover:text-brand-600"><span class="lang-es">Proyectos</span><span class="lang-en">Projects</span></a>
+      <a href="#intereses" class="hover:text-brand-600"><span class="lang-es">Intereses</span><span class="lang-en">Interests</span></a>
+      <a href="#contacto" class="rounded-lg bg-slate-900 px-4 py-2 text-white hover:bg-brand-600"><span class="lang-es">Contacto</span><span class="lang-en">Contact</span></a>
+      <button id="lang-toggle" class="flex items-center gap-2 rounded-full border border-slate-300 px-3 py-1.5 text-xs font-bold text-slate-700 hover:border-brand-500 hover:text-brand-600" aria-label="Toggle language">
+        <i class="fa-solid fa-globe"></i>
+        <span id="lang-toggle-label">EN</span>
+      </button>
+    </div>
+    <!-- Mobile: solo toggle (los links van por scroll) -->
+    <div class="flex items-center gap-2 md:hidden">
+      <a href="#contacto" class="rounded-lg bg-slate-900 px-3 py-2 text-xs font-bold text-white"><span class="lang-es">Contacto</span><span class="lang-en">Contact</span></a>
+      <button onclick="document.getElementById('lang-fab').click()" class="flex items-center gap-1 rounded-full border border-slate-300 px-3 py-2 text-xs font-bold text-slate-700" aria-label="Toggle language">
+        <i class="fa-solid fa-globe"></i><span data-lang-label>EN</span>
+      </button>
+    </div>
+  </nav>
+  <!-- Links secundarios en mobile -->
+  <nav class="flex gap-4 overflow-x-auto border-t border-slate-100 px-4 py-2 text-xs font-semibold text-slate-600 md:hidden">
+    <a href="#sobre-mi">About</a>
+    <a href="#idiomas">Idiomas</a>
+    <a href="#educacion">Educación</a>
+    <a href="#proyectos">Proyectos</a>
+    <a href="#intereses">Intereses</a>
+    <a href="#habilidades">Skills</a>
+  </nav>
+</header>

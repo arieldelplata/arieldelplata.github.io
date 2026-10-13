@@ -1,0 +1,369 @@
+---
+layout: default
+title: "Cáceres Ary Fernán | Estudiante de Ingeniería en Sistemas"
+description: "Portfolio de Cáceres Ary Fernán — Estudiante de Ingeniería en Sistemas de Información (UTN FRD, 4to año), Campana Buenos Aires."
+---
+
+<!-- ============ 1. CABECERA / PERFIL ============ -->
+<section id="inicio" class="bg-gradient-to-b from-brand-900 via-brand-700 to-brand-600 text-white">
+  <div class="mx-auto grid max-w-6xl gap-10 px-4 pb-14 pt-12 sm:px-6 lg:grid-cols-[320px_1fr] lg:pt-16">
+
+    <!-- Foto + datos rápidos -->
+    <div class="flex flex-col items-center text-center lg:items-start lg:text-left">
+      <!-- PLACEHOLDER FOTO: reemplazá assets/img/foto-perfil.jpg con tu foto real (ideal 800x800) -->
+      <img src="{{ '/assets/img/foto-perfil.jpg' | relative_url }}"
+        onerror="this.onerror=null;this.src='https://placehold.co/400x400/0f2540/ffffff?text=Foto+Perfil';"
+        alt="Foto de perfil de Cáceres Ary Fernán"
+        class="h-52 w-52 rounded-3xl border-4 border-white/40 object-cover shadow-2xl" />
+      <h1 class="mt-5 text-3xl font-extrabold leading-tight sm:text-4xl">Cáceres Ary Fernán</h1>
+      <p class="mt-2 text-lg font-medium text-blue-100">
+        <span class="lang-es">Estudiante de Ingeniería en Sistemas de Información</span>
+        <span class="lang-en">Information Systems Engineering Student</span>
+      </p>
+      <p class="mt-3 flex flex-wrap items-center justify-center gap-2 text-sm text-blue-100 lg:justify-start">
+        <span class="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1 font-semibold">
+          <i class="fa-solid fa-location-dot"></i> Campana, Buenos Aires, Argentina
+        </span>
+        <span class="inline-flex items-center gap-1.5 rounded-full bg-white/15 px-3 py-1 font-semibold">
+          <i class="fa-solid fa-graduation-cap"></i> UTN Regional Delta
+        </span>
+      </p>
+      <div class="mt-5 flex flex-wrap justify-center gap-3 lg:justify-start">
+        <a href="#contacto" class="rounded-xl bg-white px-5 py-2.5 text-sm font-bold text-brand-700 shadow hover:bg-blue-50">
+          <span class="lang-es"><i class="fa-solid fa-paper-plane mr-2"></i>Contactarme</span>
+          <span class="lang-en"><i class="fa-solid fa-paper-plane mr-2"></i>Contact me</span>
+        </a>
+        <a href="#proyectos" class="rounded-xl border border-white/50 px-5 py-2.5 text-sm font-bold text-white hover:bg-white/10">
+          <span class="lang-es"><i class="fa-solid fa-folder-open mr-2"></i>Ver proyectos</span>
+          <span class="lang-en"><i class="fa-solid fa-folder-open mr-2"></i>View projects</span>
+        </a>
+      </div>
+    </div>
+
+    <!-- Sobre mí + Mapa -->
+    <div class="flex flex-col gap-6">
+      <div id="sobre-mi" class="rounded-2xl bg-white/95 p-6 text-slate-800 shadow-xl sm:p-8">
+        <h2 class="flex items-center gap-2 text-xl font-extrabold text-slate-900">
+          <i class="fa-solid fa-user text-brand-600"></i>
+          <span class="lang-es">Sobre mí</span><span class="lang-en">About me</span>
+        </h2>
+        <p class="lang-es mt-3 leading-relaxed text-slate-600">
+          Me gusta ser eficiente en mi día a día y buscar formas de optimizar mis actividades y tiempo,
+          algo que despertó mi interés por la Ingeniería. Actualmente estoy estudiando la carrera de
+          Ingeniería en Sistemas de Información en la Universidad Tecnológica Nacional Delta (UTN FRD),
+          en el 4to Año, buscando mi primer oportunidad laboral que me permita desarrollar habilidades,
+          poner en práctica mi conocimiento académico y ganar experiencia en el área de los sistemas.
+        </p>
+        <p class="lang-en mt-3 leading-relaxed text-slate-600">
+          I like to be efficient in my daily life and look for ways to optimize my activities and time,
+          which sparked my interest in Engineering. I am currently studying Information Systems Engineering
+          at the Universidad Tecnológica Nacional Delta (UTN FRD), in my 4th year, looking for my first
+          job opportunity to develop skills, put my academic knowledge into practice and gain experience
+          in the systems field.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2 text-xs font-bold">
+          <span class="rounded-full bg-brand-50 px-3 py-1 text-brand-700">4to Año / 4th Year</span>
+          <span class="rounded-full bg-emerald-50 px-3 py-1 text-emerald-700">
+            <span class="lang-es">Buscando primera oportunidad laboral</span><span class="lang-en">Seeking first job opportunity</span>
+          </span>
+        </div>
+      </div>
+
+      <div class="rounded-2xl bg-white/95 p-4 text-slate-800 shadow-xl sm:p-5">
+        <div class="mb-3 flex items-center justify-between px-1">
+          <h3 class="text-sm font-extrabold text-slate-900">
+            <i class="fa-solid fa-map-location-dot mr-2 text-brand-600"></i>
+            <span class="lang-es">Ubicación académica y residencia</span><span class="lang-en">Academic & home location</span>
+          </h3>
+          <span class="hidden text-xs text-slate-500 sm:block">Campana, Buenos Aires · UTN FRD</span>
+        </div>
+        <!-- Mapa interactivo Leaflet -->
+        <div id="map" class="w-full" role="application" aria-label="Mapa de Campana con marcador en UTN FRD"></div>
+        <p class="px-1 pt-3 text-xs text-slate-500">
+          <i class="fa-solid fa-thumbtack mr-1 text-brand-600"></i>
+          <span class="lang-es">Marcador: UTN Facultad Regional Delta — San Martín 1171, Campana.</span>
+          <span class="lang-en">Marker: UTN Facultad Regional Delta — San Martín 1171, Campana.</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="mx-auto max-w-6xl space-y-14 px-4 py-14 sm:px-6">
+
+  <!-- ============ 2. IDIOMAS ============ -->
+  <section id="idiomas">
+    <h2 class="text-center text-2xl font-extrabold text-slate-900">
+      <span class="lang-es">Idiomas</span><span class="lang-en">Languages</span>
+    </h2>
+    <p class="mt-1 text-center text-sm text-slate-500">
+      <span class="lang-es">Mi nivel en cada idioma</span><span class="lang-en">My level in each language</span>
+    </p>
+    <div class="mt-6 grid gap-4 md:grid-cols-3">
+      <!-- Español -->
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div class="flex items-center justify-between">
+          <h3 class="font-extrabold text-slate-900"><i class="fa-solid fa-comment mr-2 text-brand-600"></i>Español <span class="font-normal text-slate-400">/ Spanish</span></h3>
+          <span class="rounded-full bg-emerald-100 px-3 py-1 text-xs font-bold text-emerald-700">Nativo · Native</span>
+        </div>
+        <div class="mt-3 h-2.5 overflow-hidden rounded-full bg-slate-100"><div class="h-full w-full rounded-full bg-emerald-500"></div></div>
+        <p class="mt-3 text-sm text-slate-500"><span class="lang-es">Lengua materna.</span><span class="lang-en">Mother tongue.</span></p>
+      </div>
+      <!-- Inglés -->
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm ring-1 ring-brand-100">
+        <div class="flex items-center justify-between gap-2">
+          <h3 class="font-extrabold text-slate-900"><i class="fa-solid fa-language mr-2 text-brand-600"></i>Inglés <span class="font-normal text-slate-400">/ English</span></h3>
+          <span class="rounded-full bg-brand-100 px-3 py-1 text-xs font-bold text-brand-700">Avanzado · Advanced</span>
+        </div>
+        <div class="mt-3 h-2.5 overflow-hidden rounded-full bg-slate-100"><div class="h-full w-5/6 rounded-full bg-brand-500"></div></div>
+        <p class="mt-3 text-sm text-slate-500">
+          <span class="lang-es">Bachillerato bilingüe de Cambridge IGCSE.</span>
+          <span class="lang-en">Cambridge IGCSE bilingual high-school diploma.</span>
+        </p>
+        <a href="{{ '/assets/docs/certificado-igcse.pdf' | relative_url }}" target="_blank" rel="noopener"
+          class="mt-4 inline-flex items-center gap-2 rounded-xl bg-brand-600 px-4 py-2 text-sm font-bold text-white transition hover:bg-brand-700">
+          <i class="fa-solid fa-certificate"></i>
+          <span class="lang-es">Ver Certificado</span><span class="lang-en">View Certificate</span>
+          <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-70"></i>
+        </a>
+      </div>
+      <!-- Italiano -->
+      <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div class="flex items-center justify-between">
+          <h3 class="font-extrabold text-slate-900"><i class="fa-solid fa-comments mr-2 text-brand-600"></i>Italiano <span class="font-normal text-slate-400">/ Italian</span></h3>
+          <span class="rounded-full bg-amber-100 px-3 py-1 text-xs font-bold text-amber-700">Intermedio · Intermediate</span>
+        </div>
+        <div class="mt-3 h-2.5 overflow-hidden rounded-full bg-slate-100"><div class="h-full w-1/2 rounded-full bg-amber-500"></div></div>
+        <p class="mt-3 text-sm text-slate-500"><span class="lang-es">Nivel conversacional intermedio.</span><span class="lang-en">Intermediate conversational level.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 3. EDUCACIÓN Y CERTIFICADOS ============ -->
+  <section id="educacion">
+    <h2 class="text-center text-2xl font-extrabold text-slate-900">
+      <span class="lang-es">Educación y Certificados</span><span class="lang-en">Education & Certificates</span>
+    </h2>
+    <div class="mt-6 grid gap-4 lg:grid-cols-3">
+      <!-- Carrera principal -->
+      <article class="rounded-2xl bg-slate-900 p-6 text-white shadow-lg lg:col-span-1">
+        <span class="inline-flex items-center gap-1 rounded-full bg-white/15 px-3 py-1 text-xs font-bold text-blue-200">
+          <i class="fa-solid fa-graduation-cap"></i>
+          <span class="lang-es">En curso · 4to Año</span><span class="lang-en">In progress · 4th Year</span>
+        </span>
+        <h3 class="mt-3 text-lg font-extrabold leading-snug">
+          <span class="lang-es">Ingeniería en Sistemas de Información</span>
+          <span class="lang-en">Information Systems Engineering</span>
+        </h3>
+        <p class="mt-1 text-sm font-semibold text-blue-200">UTN FRD — Facultad Regional Delta</p>
+        <p class="mt-3 text-sm leading-relaxed text-slate-300">
+          <span class="lang-es">Campana, Buenos Aires. Formación en desarrollo de software, bases de datos, redes y gestión de sistemas.</span>
+          <span class="lang-en">Campana, Buenos Aires. Training in software development, databases, networks and systems management.</span>
+        </p>
+      </article>
+      <!-- PLACEHOLDER curso 1: editá título / institución / link -->
+      <article class="flex flex-col rounded-2xl border-2 border-dashed border-slate-300 bg-white p-6">
+        <span class="inline-flex w-fit items-center gap-1 rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-500">
+          <i class="fa-solid fa-plus"></i>
+          <span class="lang-es">Próximo curso / certificación</span><span class="lang-en">Upcoming course / certification</span>
+        </span>
+        <h3 class="mt-3 font-extrabold text-slate-700">[ <span class="lang-es">Título del curso</span><span class="lang-en">Course title</span> ]</h3>
+        <p class="text-sm text-slate-400">[ Institución ] · [ Año ]</p>
+        <p class="mt-2 flex-1 text-sm text-slate-400"><span class="lang-es">Descripción corta del curso…</span><span class="lang-en">Short course description…</span></p>
+        <a href="#" class="mt-4 inline-flex w-fit items-center gap-2 rounded-xl border border-slate-300 px-4 py-2 text-sm font-bold text-slate-500 hover:border-brand-500 hover:text-brand-600">
+          <i class="fa-solid fa-id-card"></i><span class="lang-es">Ver credencial</span><span class="lang-en">View credential</span>
+        </a>
+      </article>
+      <!-- PLACEHOLDER curso 2 -->
+      <article class="flex flex-col rounded-2xl border-2 border-dashed border-slate-300 bg-white p-6">
+        <span class="inline-flex w-fit items-center gap-1 rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-500">
+          <i class="fa-solid fa-plus"></i>
+          <span class="lang-es">Próximo curso / certificación</span><span class="lang-en">Upcoming course / certification</span>
+        </span>
+        <h3 class="mt-3 font-extrabold text-slate-700">[ <span class="lang-es">Título del curso</span><span class="lang-en">Course title</span> ]</h3>
+        <p class="text-sm text-slate-400">[ Institución ] · [ Año ]</p>
+        <p class="mt-2 flex-1 text-sm text-slate-400"><span class="lang-es">Descripción corta del curso…</span><span class="lang-en">Short course description…</span></p>
+        <a href="#" class="mt-4 inline-flex w-fit items-center gap-2 rounded-xl border border-slate-300 px-4 py-2 text-sm font-bold text-slate-500 hover:border-brand-500 hover:text-brand-600">
+          <i class="fa-solid fa-id-card"></i><span class="lang-es">Ver credencial</span><span class="lang-en">View credential</span>
+        </a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 4. PROYECTOS ============ -->
+  <section id="proyectos">
+    <h2 class="text-center text-2xl font-extrabold text-slate-900">
+      <span class="lang-es">Proyectos</span><span class="lang-en">Projects</span>
+    </h2>
+    <p class="mt-1 text-center text-sm text-slate-500">
+      <span class="lang-es">Para agregar un proyecto, duplicá una tarjeta y completá título, descripción y enlaces.</span>
+      <span class="lang-en">To add a project, duplicate a card and fill in title, description and links.</span>
+    </p>
+    <!-- GRID: agregá tus proyectos aquí -->
+    <div class="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Proyecto placeholder 1 -->
+      <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:shadow-lg">
+        <div class="flex h-36 items-center justify-center bg-gradient-to-br from-brand-600 to-brand-900 text-4xl text-white/90">
+          <i class="fa-solid fa-code"></i>
+        </div>
+        <div class="flex flex-1 flex-col p-5">
+          <h3 class="font-extrabold text-slate-900">[ <span class="lang-es">Nombre del proyecto</span><span class="lang-en">Project name</span> ]</h3>
+          <p class="mt-2 flex-1 text-sm text-slate-500"><span class="lang-es">Descripción breve: qué hace, qué tecnologías usa…</span><span class="lang-en">Short description: what it does, tech stack…</span></p>
+          <div class="mt-3 flex flex-wrap gap-1.5 text-[11px] font-bold text-slate-500">
+            <span class="rounded bg-slate-100 px-2 py-0.5">[Tech]</span>
+            <span class="rounded bg-slate-100 px-2 py-0.5">[Tech]</span>
+          </div>
+          <div class="mt-4 flex gap-2 text-sm font-bold">
+            <a href="https://github.com/arieldelplata" target="_blank" rel="noopener" class="flex-1 rounded-lg bg-slate-900 px-3 py-2 text-center text-white hover:bg-brand-600"><i class="fa-brands fa-github mr-1"></i> Repo</a>
+            <a href="#" class="flex-1 rounded-lg border border-slate-300 px-3 py-2 text-center text-slate-600 hover:border-brand-500 hover:text-brand-600"><i class="fa-solid fa-link mr-1"></i> Demo</a>
+          </div>
+        </div>
+      </article>
+      <!-- Proyecto placeholder 2 -->
+      <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:shadow-lg">
+        <div class="flex h-36 items-center justify-center bg-gradient-to-br from-emerald-500 to-teal-700 text-4xl text-white/90">
+          <i class="fa-solid fa-database"></i>
+        </div>
+        <div class="flex flex-1 flex-col p-5">
+          <h3 class="font-extrabold text-slate-900">[ <span class="lang-es">Nombre del proyecto</span><span class="lang-en">Project name</span> ]</h3>
+          <p class="mt-2 flex-1 text-sm text-slate-500"><span class="lang-es">Descripción breve: qué hace, qué tecnologías usa…</span><span class="lang-en">Short description: what it does, tech stack…</span></p>
+          <div class="mt-3 flex flex-wrap gap-1.5 text-[11px] font-bold text-slate-500">
+            <span class="rounded bg-slate-100 px-2 py-0.5">[Tech]</span>
+            <span class="rounded bg-slate-100 px-2 py-0.5">[Tech]</span>
+          </div>
+          <div class="mt-4 flex gap-2 text-sm font-bold">
+            <a href="https://github.com/arieldelplata" target="_blank" rel="noopener" class="flex-1 rounded-lg bg-slate-900 px-3 py-2 text-center text-white hover:bg-brand-600"><i class="fa-brands fa-github mr-1"></i> Repo</a>
+            <a href="#" class="flex-1 rounded-lg border border-slate-300 px-3 py-2 text-center text-slate-600 hover:border-brand-500 hover:text-brand-600"><i class="fa-solid fa-link mr-1"></i> Demo</a>
+          </div>
+        </div>
+      </article>
+      <!-- Proyecto placeholder 3 -->
+      <article class="group flex flex-col overflow-hidden rounded-2xl border border-dashed border-slate-300 bg-slate-50/50 shadow-sm">
+        <div class="flex h-36 items-center justify-center text-4xl text-slate-300">
+          <i class="fa-solid fa-plus"></i>
+        </div>
+        <div class="flex flex-1 flex-col items-center p-5 text-center">
+          <h3 class="font-extrabold text-slate-500"><span class="lang-es">Tu próximo proyecto acá</span><span class="lang-en">Your next project here</span></h3>
+          <p class="mt-2 text-sm text-slate-400"><span class="lang-es">Duplicá esta tarjeta para agregar más.</span><span class="lang-en">Duplicate this card to add more.</span></p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ 5. ÁREAS DE INTERÉS ============ -->
+  <section id="intereses" class="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-slate-200 sm:p-10">
+    <h2 class="text-center text-2xl font-extrabold text-slate-900">
+      <span class="lang-es">Áreas de Trabajo de Interés</span><span class="lang-en">Areas of Work Interest</span>
+    </h2>
+    <p class="mt-1 text-center text-sm text-slate-500">
+      <span class="lang-es">Editá, agregá o quitá badges según tus objetivos.</span>
+      <span class="lang-en">Edit, add or remove badges to match your goals.</span>
+    </p>
+    <!-- BADGES: editables -->
+    <div class="mt-6 flex flex-wrap justify-center gap-2.5 text-sm font-bold">
+      <span class="inline-flex items-center gap-2 rounded-full bg-brand-600 px-4 py-2 text-white shadow"><i class="fa-solid fa-server"></i><span class="lang-es">Desarrollo Backend</span><span class="lang-en">Backend Development</span></span>
+      <span class="inline-flex items-center gap-2 rounded-full bg-slate-900 px-4 py-2 text-white"><i class="fa-solid fa-laptop-code"></i><span class="lang-es">Desarrollo Frontend</span><span class="lang-en">Frontend Development</span></span>
+      <span class="inline-flex items-center gap-2 rounded-full bg-emerald-100 px-4 py-2 text-emerald-800"><i class="fa-solid fa-chart-line"></i><span class="lang-es">Análisis de Datos</span><span class="lang-en">Data Analysis</span></span>
+      <span class="inline-flex items-center gap-2 rounded-full bg-violet-100 px-4 py-2 text-violet-800"><i class="fa-solid fa-gears"></i>DevOps</span>
+      <span class="inline-flex items-center gap-2 rounded-full bg-amber-100 px-4 py-2 text-amber-800"><i class="fa-solid fa-bug-slash"></i>QA / Testing</span>
+      <span class="inline-flex items-center gap-2 rounded-full bg-sky-100 px-4 py-2 text-sky-800"><i class="fa-solid fa-headset"></i><span class="lang-es">Soporte IT</span><span class="lang-en">IT Support</span></span>
+      <span class="inline-flex items-center gap-2 rounded-full bg-rose-100 px-4 py-2 text-rose-800"><i class="fa-solid fa-diagram-project"></i><span class="lang-es">Gestión de Proyectos</span><span class="lang-en">Project Management</span></span>
+      <span class="inline-flex items-center gap-2 rounded-full border-2 border-dashed border-slate-300 px-4 py-2 text-slate-400"><i class="fa-solid fa-plus"></i><span class="lang-es">Agregar área…</span><span class="lang-en">Add area…</span></span>
+    </div>
+  </section>
+
+  <!-- ============ 6. HABILIDADES BLANDAS ============ -->
+  <section id="habilidades">
+    <h2 class="text-center text-2xl font-extrabold text-slate-900">
+      <span class="lang-es">Habilidades Blandas</span><span class="lang-en">Soft Skills</span>
+    </h2>
+    <ul class="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+      <!-- Para agregar una habilidad, duplicá un <li> -->
+      <li class="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-xl text-brand-600"><i class="fa-solid fa-comments"></i></span>
+        <span><strong class="block text-slate-900"><span class="lang-es">Comunicación efectiva</span><span class="lang-en">Effective communication</span></strong><span class="text-xs text-slate-500"><span class="lang-es">Claridad y escucha activa</span><span class="lang-en">Clarity and active listening</span></span></span>
+      </li>
+      <li class="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-50 text-xl text-emerald-600"><i class="fa-solid fa-people-group"></i></span>
+        <span><strong class="block text-slate-900"><span class="lang-es">Trabajo en equipo</span><span class="lang-en">Teamwork</span></strong><span class="text-xs text-slate-500"><span class="lang-es">Colaboración y apoyo mutuo</span><span class="lang-en">Collaboration and mutual support</span></span></span>
+      </li>
+      <li class="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-amber-50 text-xl text-amber-600"><i class="fa-solid fa-lightbulb"></i></span>
+        <span><strong class="block text-slate-900"><span class="lang-es">Resolución de problemas</span><span class="lang-en">Problem solving</span></strong><span class="text-xs text-slate-500"><span class="lang-es">Enfoque analítico y práctico</span><span class="lang-en">Analytical, hands-on approach</span></span></span>
+      </li>
+      <li class="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-violet-50 text-xl text-violet-600"><i class="fa-solid fa-clock"></i></span>
+        <span><strong class="block text-slate-900"><span class="lang-es">Gestión del tiempo</span><span class="lang-en">Time management</span></strong><span class="text-xs text-slate-500"><span class="lang-es">Eficiencia y organización</span><span class="lang-en">Efficiency and organization</span></span></span>
+      </li>
+      <li class="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-sky-50 text-xl text-sky-600"><i class="fa-solid fa-arrows-rotate"></i></span>
+        <span><strong class="block text-slate-900"><span class="lang-es">Adaptabilidad</span><span class="lang-en">Adaptability</span></strong><span class="text-xs text-slate-500"><span class="lang-es">Aprendizaje continuo</span><span class="lang-en">Continuous learning</span></span></span>
+      </li>
+      <li class="flex items-center gap-3 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
+        <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-rose-50 text-xl text-rose-600"><i class="fa-solid fa-brain"></i></span>
+        <span><strong class="block text-slate-900"><span class="lang-es">Pensamiento crítico</span><span class="lang-en">Critical thinking</span></strong><span class="text-xs text-slate-500"><span class="lang-es">Optimización y mejora continua</span><span class="lang-en">Optimization and improvement</span></span></span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============ 7. CONTACTO ============ -->
+  <section id="contacto" class="overflow-hidden rounded-3xl bg-slate-900 p-6 text-white shadow-xl sm:p-10">
+    <h2 class="text-center text-2xl font-extrabold">
+      <span class="lang-es">Contacto</span><span class="lang-en">Contact</span>
+    </h2>
+    <p class="mt-1 text-center text-sm text-slate-300">
+      <span class="lang-es">¿Conversamos? Estoy buscando mi primera oportunidad laboral.</span>
+      <span class="lang-en">Shall we talk? I'm looking for my first job opportunity.</span>
+    </p>
+    <div class="mx-auto mt-6 grid max-w-3xl gap-3 sm:grid-cols-2">
+      <a href="https://github.com/arieldelplata" target="_blank" rel="noopener"
+        class="flex items-center gap-4 rounded-2xl bg-white/10 p-4 transition hover:scale-[1.02] hover:bg-white/20">
+        <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-2xl text-slate-900"><i class="fa-brands fa-github"></i></span>
+        <span><strong class="block">GitHub</strong><span class="text-sm text-slate-300">github.com/arieldelplata</span></span>
+      </a>
+      <a href="https://www.linkedin.com/in/ary-caceres/" target="_blank" rel="noopener"
+        class="flex items-center gap-4 rounded-2xl bg-[#0A66C2] p-4 transition hover:scale-[1.02] hover:brightness-110">
+        <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-2xl text-[#0A66C2]"><i class="fa-brands fa-linkedin-in"></i></span>
+        <span><strong class="block">LinkedIn</strong><span class="text-sm text-blue-100">/in/ary-caceres</span></span>
+      </a>
+      <a href="mailto:caceresaryf@gmail.com"
+        class="flex items-center gap-4 rounded-2xl bg-white/10 p-4 transition hover:scale-[1.02] hover:bg-white/20">
+        <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-500 text-2xl text-white"><i class="fa-solid fa-envelope"></i></span>
+        <span class="min-w-0"><strong class="block">Email</strong><span class="block truncate text-sm text-slate-300">caceresaryf@gmail.com</span></span>
+      </a>
+      <a href="https://wa.me/543489590352?text=Hola%20Ary%2C%20vi%20tu%20portfolio%20y%20quiero%20contactarte."
+        target="_blank" rel="noopener"
+        class="flex items-center gap-4 rounded-2xl bg-[#25D366] p-4 transition hover:scale-[1.02] hover:brightness-105">
+        <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-white text-2xl text-[#128C4B]"><i class="fa-brands fa-whatsapp"></i></span>
+        <span><strong class="block">WhatsApp</strong><span class="text-sm text-green-50">+54 3489 590352</span></span>
+      </a>
+    </div>
+    <p class="mt-4 text-center text-xs text-slate-400">
+      <i class="fa-solid fa-phone mr-1"></i>
+      <a href="tel:+543489590352" class="underline hover:text-white">+54 3489 590352</a>
+      <span class="mx-2">·</span>
+      <i class="fa-solid fa-envelope mr-1"></i>
+      <a href="mailto:caceresaryf@gmail.com" class="underline hover:text-white">caceresaryf@gmail.com</a>
+    </p>
+  </section>
+</div>
+
+<!-- Mapa Leaflet: Campana + marcador UTN FRD (-34.17847, -58.96231) -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var el = document.getElementById('map');
+    if (!el || typeof L === 'undefined') return;
+    var utn = [-34.17847, -58.96231];
+    var map = L.map('map', { scrollWheelZoom: false }).setView([-34.1725, -58.9605], 14);
+    map.on('focus', function () { map.scrollWheelZoom.enable(); });
+    map.on('blur', function () { map.scrollWheelZoom.disable(); });
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 19,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);
+    L.marker(utn).addTo(map)
+      .bindPopup('<strong>UTN Facultad Regional Delta</strong><br>San Martín 1171, Campana')
+      .openPopup();
+    setTimeout(function () { map.invalidateSize(); }, 300);
+  });
+</script>

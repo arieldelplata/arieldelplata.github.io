@@ -1,0 +1,3 @@
+Reemplazá este archivo con tu foto real nombrada foto-perfil.jpg (ideal 800x800, JPG).
+El index.html ya apunta a {{ '/assets/img/foto-perfil.jpg' | relative_url }} con fallback a placeholder.
+Podés borrar este .gitkeep cuando subas la foto.
