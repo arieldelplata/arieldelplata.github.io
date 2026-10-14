@@ -117,15 +117,22 @@ description: "Portfolio de Cáceres Ary Fernán — Estudiante de Ingeniería en
         </div>
         <div class="mt-3 h-2.5 overflow-hidden rounded-full bg-slate-100"><div class="h-full w-5/6 rounded-full bg-brand-500"></div></div>
         <p class="mt-3 text-sm text-slate-500">
-          <span class="lang-es">Bachillerato bilingüe de Cambridge IGCSE.</span>
-          <span class="lang-en">Cambridge IGCSE bilingual high-school diploma.</span>
+          <span class="lang-es">Bachillerato bilingüe Cambridge IGCSE. Nivel acreditado con examen First Certificate (B2).</span>
+          <span class="lang-en">Cambridge IGCSE bilingual high-school diploma. Level certified with First Certificate exam (B2).</span>
         </p>
-        <a href="{{ '/assets/docs/certificado-igcse.pdf' | relative_url }}" target="_blank" rel="noopener"
-          class="mt-4 inline-flex items-center gap-2 rounded-xl bg-brand-600 px-4 py-2 text-sm font-bold text-white transition hover:bg-brand-700">
-          <i class="fa-solid fa-certificate"></i>
-          <span class="lang-es">Ver Certificado</span><span class="lang-en">View Certificate</span>
-          <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-70"></i>
-        </a>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <a href="{{ '/assets/docs/certificado-first.pdf' | relative_url }}" target="_blank" rel="noopener"
+            class="inline-flex items-center gap-2 rounded-xl bg-brand-600 px-4 py-2 text-sm font-bold text-white transition hover:bg-brand-700">
+            <i class="fa-solid fa-certificate"></i>
+            <span class="lang-es">Ver Certificado FIRST</span><span class="lang-en">View FIRST Certificate</span>
+            <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-70"></i>
+          </a>
+          <a href="{{ '/assets/docs/certificado-igcse.pdf' | relative_url }}" target="_blank" rel="noopener"
+            class="inline-flex items-center gap-2 rounded-xl border border-brand-200 bg-brand-50 px-4 py-2 text-sm font-bold text-brand-700 transition hover:border-brand-500">
+            <i class="fa-solid fa-file-pdf"></i>
+            <span class="lang-es">Ver Certificado IGCSE</span><span class="lang-en">View IGCSE Certificate</span>
+          </a>
+        </div>
       </div>
       <!-- Italiano -->
       <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -144,7 +151,7 @@ description: "Portfolio de Cáceres Ary Fernán — Estudiante de Ingeniería en
     <h2 class="text-center text-2xl font-extrabold text-slate-900">
       <span class="lang-es">Educación y Certificados</span><span class="lang-en">Education & Certificates</span>
     </h2>
-    <div class="mt-6 grid gap-4 lg:grid-cols-3">
+    <div class="mt-6 grid gap-4 lg:grid-cols-2">
       <!-- Carrera principal -->
       <article class="rounded-2xl bg-slate-900 p-6 text-white shadow-lg lg:col-span-1">
         <span class="inline-flex items-center gap-1 rounded-full bg-white/15 px-3 py-1 text-xs font-bold text-blue-200">
@@ -161,7 +168,27 @@ description: "Portfolio de Cáceres Ary Fernán — Estudiante de Ingeniería en
           <span class="lang-en">Campana, Buenos Aires. Training in software development, databases, networks and systems management.</span>
         </p>
       </article>
-      <!-- PLACEHOLDER curso 1: editá título / institución / link -->
+      <!-- Cambridge IGCSE: título secundario bilingüe -->
+      <article class="flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <span class="inline-flex w-fit items-center gap-1 rounded-full bg-brand-50 px-3 py-1 text-xs font-bold text-brand-700">
+          <i class="fa-solid fa-medal"></i>
+          <span class="lang-es">Finalizado · Título secundario</span><span class="lang-en">Completed · High-school diploma</span>
+        </span>
+        <h3 class="mt-3 font-extrabold text-slate-900">
+          <span class="lang-es">Bachillerato Bilingüe Cambridge IGCSE</span>
+          <span class="lang-en">Cambridge IGCSE Bilingual High-School Diploma</span>
+        </h3>
+        <p class="text-sm font-semibold text-slate-500">Cambridge International · IGCSE</p>
+        <p class="mt-2 flex-1 text-sm text-slate-500">
+          <span class="lang-es">Título de estudios secundarios cursado en inglés, con exámenes internacionales del programa Cambridge IGCSE.</span>
+          <span class="lang-en">Secondary studies diploma taught in English, with international exams from the Cambridge IGCSE programme.</span>
+        </p>
+        <a href="{{ '/assets/docs/certificado-igcse.pdf' | relative_url }}" target="_blank" rel="noopener" class="mt-4 inline-flex w-fit items-center gap-2 rounded-xl bg-slate-900 px-4 py-2 text-sm font-bold text-white transition hover:bg-brand-600">
+          <i class="fa-solid fa-id-card"></i><span class="lang-es">Ver credencial</span><span class="lang-en">View credential</span>
+          <i class="fa-solid fa-arrow-up-right-from-square text-xs opacity-70"></i>
+        </a>
+      </article>
+      <!-- PLACEHOLDER reserva (oculto): descomentá para agregar un futuro curso/certificado
       <article class="flex flex-col rounded-2xl border-2 border-dashed border-slate-300 bg-white p-6">
         <span class="inline-flex w-fit items-center gap-1 rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-500">
           <i class="fa-solid fa-plus"></i>
@@ -174,19 +201,7 @@ description: "Portfolio de Cáceres Ary Fernán — Estudiante de Ingeniería en
           <i class="fa-solid fa-id-card"></i><span class="lang-es">Ver credencial</span><span class="lang-en">View credential</span>
         </a>
       </article>
-      <!-- PLACEHOLDER curso 2 -->
-      <article class="flex flex-col rounded-2xl border-2 border-dashed border-slate-300 bg-white p-6">
-        <span class="inline-flex w-fit items-center gap-1 rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-500">
-          <i class="fa-solid fa-plus"></i>
-          <span class="lang-es">Próximo curso / certificación</span><span class="lang-en">Upcoming course / certification</span>
-        </span>
-        <h3 class="mt-3 font-extrabold text-slate-700">[ <span class="lang-es">Título del curso</span><span class="lang-en">Course title</span> ]</h3>
-        <p class="text-sm text-slate-400">[ Institución ] · [ Año ]</p>
-        <p class="mt-2 flex-1 text-sm text-slate-400"><span class="lang-es">Descripción corta del curso…</span><span class="lang-en">Short course description…</span></p>
-        <a href="#" class="mt-4 inline-flex w-fit items-center gap-2 rounded-xl border border-slate-300 px-4 py-2 text-sm font-bold text-slate-500 hover:border-brand-500 hover:text-brand-600">
-          <i class="fa-solid fa-id-card"></i><span class="lang-es">Ver credencial</span><span class="lang-en">View credential</span>
-        </a>
-      </article>
+      -->
     </div>
   </section>
 
