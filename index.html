@@ -272,6 +272,43 @@ description: "Portfolio de Cáceres Ary Fernán — Estudiante de Ingeniería en
           </div>
         </div>
       </article>
+      <!-- Proyecto 4: Asistente Personal IA (n8n-Agent) -->
+      <article class="group flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition hover:shadow-lg">
+        <div class="relative">
+          <span class="absolute right-3 top-3 z-10 rounded-full bg-amber-400 px-3 py-1 text-[11px] font-bold text-amber-900 shadow">
+            <span class="lang-es">En curso</span><span class="lang-en">In progress</span>
+          </span>
+          <div class="h-44 bg-slate-100">
+            <img data-n8n-panel="0" src="{{ '/assets/img/n8n-main-workflow.png' | relative_url }}"
+              onerror="this.onerror=null;this.src='https://placehold.co/900x450/0f2540/ffffff?text=n8n+Main+Workflow';"
+              alt="Workflow principal del agente de Telegram en n8n"
+              class="h-full w-full object-cover" />
+            <img data-n8n-panel="1" src="{{ '/assets/img/n8n-cartuchera-workflow.png' | relative_url }}"
+              onerror="this.onerror=null;this.src='https://placehold.co/900x450/0a428a/ffffff?text=n8n+miCartuchera+Workflow';"
+              alt="Workflow del asistente de miCartuchera en n8n"
+              class="hidden h-full w-full object-cover" />
+          </div>
+          <div class="absolute inset-x-0 bottom-0 z-10 flex gap-1.5 bg-gradient-to-t from-slate-900/80 to-transparent p-2.5">
+            <button type="button" data-n8n-tab="0" class="rounded-lg bg-white/95 px-2.5 py-1 text-[11px] font-bold text-brand-700 transition">
+              <span class="lang-es">Workflow principal</span><span class="lang-en">Main workflow</span>
+            </button>
+            <button type="button" data-n8n-tab="1" class="rounded-lg bg-white/25 px-2.5 py-1 text-[11px] font-bold text-white transition hover:bg-white/40">
+              <span class="lang-es">Asistente miCartuchera</span><span class="lang-en">miCartuchera assistant</span>
+            </button>
+          </div>
+        </div>
+        <div class="flex flex-1 flex-col p-5 sm:p-6">
+          <h3 class="font-extrabold text-slate-900">Asistente Personal IA (n8n-Agent)</h3>
+          <p class="mt-2 flex-1 text-sm text-slate-500"><span class="lang-es">Proyecto en curso: asistente personal self-hosted. Un bot de Telegram dispara un agente de IA que orquesta tools de Google Calendar y delega tareas de GitHub a workflows por repositorio. Construido con n8n sobre Docker.</span><span class="lang-en">Work in progress: self-hosted personal assistant. A Telegram bot triggers an AI agent that orchestrates Google Calendar tools and delegates GitHub tasks to per-repo workflows. Built with n8n on Docker.</span></p>
+          <div class="mt-3 flex flex-wrap gap-1.5 text-[11px] font-bold text-slate-500">
+            <span class="rounded bg-slate-100 px-2 py-0.5">n8n</span>
+            <span class="rounded bg-slate-100 px-2 py-0.5">Docker</span>
+            <span class="rounded bg-slate-100 px-2 py-0.5">AI Agents</span>
+            <span class="rounded bg-slate-100 px-2 py-0.5">Telegram</span>
+            <span class="rounded bg-slate-100 px-2 py-0.5">Google Calendar</span>
+          </div>
+        </div>
+      </article>
       <!-- Proyecto placeholder (oculto): descomentá para agregar un futuro proyecto
       <article class="group flex flex-col overflow-hidden rounded-2xl border border-dashed border-slate-300 bg-slate-50/50 shadow-sm">
         <div class="flex h-36 items-center justify-center text-4xl text-slate-300">
@@ -451,6 +488,30 @@ description: "Portfolio de Cáceres Ary Fernán — Estudiante de Ingeniería en
     </p>
   </section>
 </div>
+
+<!-- Galería de capturas de la tarjeta n8n (pestañas, una imagen a la vez) -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var tabs = document.querySelectorAll('[data-n8n-tab]');
+    var panels = document.querySelectorAll('[data-n8n-panel]');
+    if (!tabs.length) return;
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        var idx = tab.getAttribute('data-n8n-tab');
+        tabs.forEach(function (t) {
+          var active = t === tab;
+          t.classList.toggle('bg-white/95', active);
+          t.classList.toggle('text-brand-700', active);
+          t.classList.toggle('bg-white/25', !active);
+          t.classList.toggle('text-white', !active);
+        });
+        panels.forEach(function (p) {
+          p.classList.toggle('hidden', p.getAttribute('data-n8n-panel') !== idx);
+        });
+      });
+    });
+  });
+</script>
 
 <!-- Mapa Leaflet: Campana + marcador UTN FRD (-34.17847, -58.96231) -->
 <script>
